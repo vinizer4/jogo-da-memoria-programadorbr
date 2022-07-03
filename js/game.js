@@ -3,6 +3,21 @@ let game = {
     lockMode: false,
     firstCard: null,
     secondCard: null,
+    
+    // O array techs representa todos as imagens que estara nas cartas
+    techs: [
+        'bootstrap',
+        'css',
+        'electron',
+        'firebase',
+        'html',
+        'javascript',
+        'jquery',
+        'mongo',
+        'node',
+        'react'],
+
+    cards: null,
 
     setCard: function(id){
         // Filtramos o array card para retornar o id da carta que nos clicamos
@@ -52,22 +67,6 @@ let game = {
     checkGameOver(){
         return this.cards.filter(card => !card.flipped).length == 0;
     },
-
-
-    // O array techs representa todos as imagens que estara nas cartas
-     techs: [
-        'bootstrap',
-        'css',
-        'electron',
-        'firebase',
-        'html',
-        'javascript',
-        'jquery',
-        'mongo',
-        'node',
-        'react'],
-
-    cards: null,
 
         // Função responsavel por criar as cartas
     createCardsFromTechs: function () {

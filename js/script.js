@@ -20,7 +20,7 @@ function initializeCards(cards) {
     // Utilizamos o DOM para capturar a nossa gameBoard
     let gameBoard = document.getElementById('gameBoard');
 
-    gameBoard.innerHTM = "";
+    gameBoard.innerHTML = '';
     
     // Passamos as nossas cartas que foram armazenadas na let cards que foi decladara no escopo global como parametro
     // Usamos o forEach para executar uma função em cada carta
@@ -34,11 +34,11 @@ function initializeCards(cards) {
         cardElement.classList.add(CARD);
         //
         cardElement.dataset.icon = card.icon;
-        // Adionaremos um addEventListener que ficara ouvindo o evento de click passado como parametro, quando o click acontecer ele executada a função flipCard que é responsavel por virar a carta
-        cardElement.addEventListener('click', flipCard)
-
         // Chamamos a função createCardContent que ira criar os elementos dentro da carta front e back
         createCardContent(card, cardElement);
+
+        // Adionaremos um addEventListener que ficara ouvindo o evento de click passado como parametro, quando o click acontecer ele executada a função flipCard que é responsavel por virar a carta
+        cardElement.addEventListener('click', flipCard)
 
         //Aqui vamos usar o metodo appendChild para adicionarmos as cartas que foram manipuladas no código acima em nosso  como filho do tabuleiro gameBoard.
 
@@ -107,5 +107,5 @@ function restart(){
     game.clearCards();
     startGame();
     let gameOverLayer = document.getElementById('gameOver');
-                    gameOverLayer.style.display = 'nonee';
+    gameOverLayer.style.display = 'none';
 }
